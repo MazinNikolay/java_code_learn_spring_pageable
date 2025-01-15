@@ -80,7 +80,7 @@ public class BookController {
             @ApiResponse(responseCode = "404",
                     description = "Book not found")
     })
-    public ResponseEntity<Page<Book>> getUsers(Pageable pageable) {
+    public ResponseEntity<Page<Book>> getBooks(Pageable pageable) {
         return ResponseEntity.ok().body(service.getBooksPageable(pageable));
     }
 
@@ -96,7 +96,7 @@ public class BookController {
             @ApiResponse(responseCode = "404",
                     description = "Book not found")
     })
-    public ResponseEntity<Book> getUserData(@PathVariable Long id) {
+    public ResponseEntity<Book> getBookData(@PathVariable Long id) {
         return ResponseEntity.ok().body(service.getBookInfo(id));
     }
 }
